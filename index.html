@@ -62,8 +62,8 @@
               dateRange = dateSelect.MPDatepicker('value'),
               slices = slicesPicker.MPSelect('value');
 
-          if (propName && slices > 0) {
-            MP.api.segment(["Ad_Chartboost_End_Of_Puzzle_Fire", "Ad_FBAN_End_Of_Puzzle_Fire", "Ad_Kiip_End_Of_Puzzle_Fire", "Ad_MediaBrix_End_Of_Puzzle_Fire", "Ad_Tapjoy_End_Of_Puzzle_Fire", "Puzzle_Complete_All"], propName, dateRange).done(function(results) {
+          if (slices > 0) {
+            MP.api.events(["Ad_Chartboost_End_Of_Puzzle_Fire", "Ad_FBAN_End_Of_Puzzle_Fire", "Ad_Kiip_End_Of_Puzzle_Fire", "Ad_MediaBrix_End_Of_Puzzle_Fire", "Ad_Tapjoy_End_Of_Puzzle_Fire", "Puzzle_Complete_All"], dateRange).done(function(results) {
               data = results.values();
               processResults(data, slices);
             });
