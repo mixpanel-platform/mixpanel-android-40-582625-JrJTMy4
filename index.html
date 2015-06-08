@@ -54,7 +54,7 @@
           ]
         };
         
-        var slicesPicker = $('#sliceSelect').MPSelect(options);
+        //var slicesPicker = $('#sliceSelect').MPSelect(options);
         
         var params = {
           type: 'unique',     // analysis type for the data, can be 'general', 'unique', or 'average'
@@ -67,9 +67,10 @@
         var runQuery = function() {
           //var eventName = eventSelect.MPEventSelect('value'),
           var propName  = propSelect.MPPropertySelect('value'),
-              dateRange = dateSelect.MPDatepicker('value'),
-              slices = slicesPicker.MPSelect('value');
-              
+              dateRange = dateSelect.MPDatepicker('value');
+              //slices = slicesPicker.MPSelect('value');
+          
+          slices = 5;   
           params['from'] = dateRange.from.toISOString().substring(0, 10);
           params['to'] = dateRange.to.toISOString().substring(0, 10);
 
