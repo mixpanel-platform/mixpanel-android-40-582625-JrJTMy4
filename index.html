@@ -74,7 +74,7 @@
           params['to'] = dateRange.to.toISOString().substring(0, 10);
 
           if (slices > 0) {
-            MP.api.events(["Ad_Chartboost_End_Of_Puzzle_Fire", "Ad_FBAN_End_Of_Puzzle_Fire", "Ad_Kiip_End_Of_Puzzle_Fire", "Ad_MediaBrix_End_Of_Puzzle_Fire", "Ad_Tapjoy_End_Of_Puzzle_Fire", "Puzzle_Complete_All"], params).done(function(results) {
+            MP.api.events("Ad_Chartboost_End_Of_Puzzle_Fire", "Ad_FBAN_End_Of_Puzzle_Fire", "Ad_Kiip_End_Of_Puzzle_Fire", "Ad_MediaBrix_End_Of_Puzzle_Fire", "Ad_Tapjoy_End_Of_Puzzle_Fire", "Puzzle_Complete_All", params).done(function(results) {
               data = results.values();
               console.log(data);
               processResults(data, slices);
